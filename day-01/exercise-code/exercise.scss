@@ -8,33 +8,38 @@
 // In the end, compare it with the result from the /exercise-answer folder.
 // Good luck!
 
+$font-family: "Helvetica", Arial, sans-serif;
+$color: #cccccc;
+$baseline: 1em;
+$space: 5%;
+
 * { box-sizing: border-box; }
 
 /* Body styles */
 body {
-    font-family: "Helvetica", Arial, sans-serif;
-    color: #cccccc;
+    font-family: $font-family;
+    color: $color;
 }
 
     body p {
-        color: #888;
-        line-height: 1.5;
+        color: darken($color, 27%);
+        line-height: $baseline + 0.5;
     }
 
 .container { clear: both; }
 
 main {
     float: left;
-    width: 75%;
+    width: $space * 15;
 }
 
 #sidebar {
     float: right;
-    margin-left: 5%;
-    width: 20%;
+    margin-left: $space;
+    width: $space *4;
 }
 
 /* Footer styles.
  *
  * These should be placed last. */
-footer { margin-top: 2em; padding: 1em; }
+footer { margin-top: $baseline *2; padding: $baseline; }
