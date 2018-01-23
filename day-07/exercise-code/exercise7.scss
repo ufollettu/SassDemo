@@ -1,0 +1,42 @@
+//maps
+$percentage-sizes: (
+        size1: 100%
+);
+$em-sizes: (
+        emsize1: 1em
+);
+$simple-size: (
+        spsize1: 1
+);
+$fonts: (
+        family: (Helvetica, Arial, sans-serif)
+);
+$content: (
+        cont: "-"
+);
+$text-color: (
+        graycolor: #999
+);
+
+body {
+  font: #{map_get($em-sizes, emsize1)}/#{map_get($simple-size, spsize1)*1.5} #{map_get($fonts, family)};
+  color: #{map_get($text-color, graycolor)};
+}
+
+.large-text {
+  font-size: map-get($percentage-sizes, size1)*2;
+}
+
+.small-text {
+  font-size: map-get($percentage-sizes, size1)*0.75;
+}
+
+blockquote {
+  padding: #{map_get($em-sizes, emsize1) + 0.5};
+  margin: #{map_get($em-sizes, emsize1) * 3};
+  cite {
+    &:before {
+      content: "#{map_get($content, cont)} "
+    }
+  }
+}
