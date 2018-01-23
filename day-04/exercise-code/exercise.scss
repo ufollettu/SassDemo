@@ -8,55 +8,61 @@
  * In the end, compare it with the result from the /exercise-answer folder.
  * Good luck! */
 
+//Variables
+$text-font-family: Arial, sans-serif;
+$baseline: 1.5em;
+$base-color: #333;
+$text-a-color: #CD746A;
+$text-a-hover-color: #fff;
+$base-line-height: 1.5;
+
+$fixed-layout-width: 960px;
+$fluid-layout-width: 85%;
+
 body {
-    font-family: Arial, sans-serif;
-    font-size: 1em;
-    line-height: 1.5;
+  font-family: $text-font-family;
+  font-size: $baseline - 0.5;
+  line-height: $base-line-height;
 }
 
 p {
-    margin-bottom: 1.5em;
-
-    a {
-        text-decoration: none;
-        color: #CD746A;
-
-        &:hover {
-            color: #fff;
-            background-color: #333;
-        }
+  margin-bottom: $baseline;
+  a {
+    text-decoration: none;
+    color: $text-a-color;
+    &:hover {
+      color: $text-a-hover-color;
+      background-color: $base-color;
     }
+  }
 }
 
 blockquote {
-    font-family: serif;
-    font-size: 150%;
-    font-style: italic;
-    padding: 3em 1.5em;
-    margin: 3em;
+  font-family: serif;
+  font-size: 150%;
+  font-style: italic;
+  padding: ($baseline *2) $baseline;
+  margin: $baseline *2;
+  cite {
+    a {
+      color: $base-color;
 
-    cite {
-        a {
-            color: #333;
-
-            &:hover {
-                color: #CD746A;
-                text-decoration: underline;
-                text-transform: uppercase;
-            }
-        }
-
-        &:before {
-            content: "- ";
-        }
+      &:hover {
+        color: $text-a-color;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
     }
+    &:before {
+      content: "- ";
+    }
+  }
 }
 
 .container {
-    width: 960px;
-    margin: 0 auto;
-
-    .fluid-layout & {
-        width: 85%;
-    }
+  width: $fixed-layout-width;
+  margin: 0 auto;
+  .fluid-layout & {
+    width: $fluid-layout-width;
+  }
 }
