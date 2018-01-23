@@ -1,0 +1,32 @@
+//Variables
+// font family, size and line height
+
+
+
+$btn-name-prm: "primary";
+$btn-name-def: "default";
+
+$button-color: #fff;
+$bg-prim-color: #89C3AB;
+$bg-def-color: #686868;
+
+$text-font-family:Helvetica, Arial, sans-serif;
+$text-font-size: 1em;
+$text-line-height: 1.5;
+
+body {
+  font: #{$text-font-size}/#{$text-line-height} $text-font-family;
+}
+
+.btn {
+  display: inline-block;
+  padding: ($text-font-size/2) $text-font-size;
+  &-#{$btn-name-prm}{
+    background-color: $bg-prim-color;
+    color: $button-color;
+  }
+  &-#{$btn-name-def} {
+    background-color: $bg-def-color;
+    color: $button-color;
+  }
+}
